@@ -1,20 +1,58 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<title>React example</title>
+		<meta charSet="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<style media="only screen">
+            html, body, #root {
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                box-sizing: border-box;
+                -webkit-overflow-scrolling: touch;
+            }
 
-  <title>React</title>
-  
-  <!-- React -->
-  <script src="//unpkg.com/systemjs@0.19.47/dist/system.js"></script>
-  
-</head>
+            html {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0;
+                overflow: auto;
+            }
 
-<body>
-  <div id="react-app"></div>
-  <!-- Project -->
-  <script src="config.js"></script>
-</body>
+            body {
+                padding: 1rem;
+                overflow: auto;
+            }
+        </style>
+	</head>
+	<body>
+		<div id="root">Loading React example…</div>
+		<script>
+            var appLocation = './';
+            var boilerplatePath = '';
+            var systemJsMap = {
+                "@ag-grid-community/core/dist/styles": "https://unpkg.com/@ag-grid-community/core@27.3.0/dist/styles",
+                "@ag-grid-community/react": "https://unpkg.com/@ag-grid-community/react@27.3.0/",
+                "ag-grid-community": "https://unpkg.com/ag-grid-community@27.3.0/",
+                "ag-grid-enterprise": "https://unpkg.com/ag-grid-enterprise@27.3.0/",
+                "ag-grid-react": "https://unpkg.com/ag-grid-react@27.3.0/"
+            };
+            var systemJsPaths = {
+                "@ag-grid-community/client-side-row-model": "https://unpkg.com/@ag-grid-community/client-side-row-model@27.3.0/dist/client-side-row-model.cjs.min.js",
+                "@ag-grid-community/core": "https://unpkg.com/@ag-grid-community/core@27.3.0/dist/core.cjs.min.js",
+                "@ag-grid-community/csv-export": "https://unpkg.com/@ag-grid-community/csv-export@27.3.0/dist/csv-export.cjs.min.js",
+                "@ag-grid-community/infinite-row-model": "https://unpkg.com/@ag-grid-community/infinite-row-model@27.3.0/dist/infinite-row-model.cjs.min.js"
+            };
+        </script>
+		<script src="https://unpkg.com/systemjs@0.19.47/dist/system.js">
+		</script>
+		<script src="systemjs.config.js">
+		</script>
+		<script>System.import('./index.tsx').catch(function(err) { console.error(err); });</script>
+	</body>
 </html>
+
+
